@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Listing | E-Solutions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Filter Offcanvas -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="filterOffcanvas" aria-labelledby="filterOffcanvasLabel">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-semibold" id="filterOffcanvasLabel">Filters</h5>
+      <div>
+        <button type="button" class="btn btn-link text-primary text-decoration-none p-0 me-2">RESET</button>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="offcanvas-body">
+      <div class="d-flex flex-column gap-3">
+        <select class="form-select"><option selected>Project ID (All)</option></select>
+        <select class="form-select"><option selected>Type (All)</option></select>
+        <select class="form-select"><option selected>BU (All)</option></select>
+        <select class="form-select"><option selected>Source (All)</option></select>
+        <input type="text" class="form-control" placeholder="Project Name">
+        <select class="form-select"><option selected>Dosage Form (All)</option></select>
+        <input type="text" class="form-control" placeholder="Strength">
+        <select class="form-select"><option selected>Strength(Unit) (All)</option></select>
+        <select class="form-select"><option selected>Status (All)</option></select>
+        <div>
+          <label class="form-label small">Initiation Date Range</label>
+          <div class="input-group">
+            <input type="date" class="form-control">
+            <input type="date" class="form-control">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex">
+    <!-- Sidebar is injected by script.js -->
+    <div id="sidebar-container"></div>
+
+    <div class="main-content flex-grow-1">
+      <!-- Header is injected by script.js -->
+      <header id="header-container" class="bg-white"></header>
+      
+      <main class="p-4">
+        <div class="container-fluid">
+          <div class="card shadow-sm border-0">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="card-title fw-semibold m-0">Project Listing Details</h5>
+                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas" aria-controls="filterOffcanvas">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel me-1" viewBox="0 0 16 16"><path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5zM2 2v1.57c.853.84 2.541 2.508 3.211 3.211L6 8.242v5.046l3-1v-4.046l.789-.789c.67-.703 2.358-2.37 3.211-3.21z"/></svg>
+                  Filters
+                </button>
+              </div>
+
+              <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Project ID</th>
+                      <th>Type</th>
+                      <th>BU</th>
+                      <th>Source</th>
+                      <th>Project Name</th>
+                      <th>Dosage Form</th>
+                      <th>Strength</th>
+                      <th>Pack Style</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-medium">IL25077</td>
+                      <td>In Licensing</td>
+                      <td>BU3 - UK</td>
+                      <td>Maple</td>
+                      <td>Guanfacine tablets</td>
+                      <td>Tablet</td>
+                      <td>1/2/3/4 mg</td>
+                      <td>ALU-ALU Blister</td>
+                      <td><span class="badge status-badge bg-success-light text-success-dark">Approved</span></td>
+                    </tr>
+                    <tr>
+                      <td class="fw-medium">ID25054</td>
+                      <td>In-House Development</td>
+                      <td>BU2 - S.Zhaveri</td>
+                      <td>In-House</td>
+                      <td>Haloperidol Tablets</td>
+                      <td>Tablet</td>
+                      <td>1/2 mg</td>
+                      <td>ALU-PVC Blister</td>
+                      <td><span class="badge status-badge bg-info-light text-info-dark">In IPD</span></td>
+                    </tr>
+                    <tr>
+                      <td class="fw-medium">ST25064</td>
+                      <td>Site Transfer</td>
+                      <td>BU2 - S.Zhaveri</td>
+                      <td>In-House</td>
+                      <td>Tolterodine prolonged-release</td>
+                      <td>Capsule</td>
+                      <td>2/4 mg</td>
+                      <td>ALU-PVC/PVDC</td>
+                      <td><span class="badge status-badge bg-danger-light text-danger-dark">Rejected</span></td>
+                    </tr>
+                     <!-- Add more rows as needed -->
+                  </tbody>
+                </table>
+              </div>
+              
+              <!-- Pagination -->
+              <nav class="d-flex justify-content-end align-items-center mt-3" aria-label="Page navigation">
+                <p class="text-muted small mb-0 me-3">Rows per page: 10</p>
+                <p class="text-muted small mb-0 me-3">1-10 of 196</p>
+                <ul class="pagination pagination-sm mb-0">
+                  <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

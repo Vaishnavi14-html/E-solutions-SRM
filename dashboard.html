@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | E-Solutions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="d-flex">
+    <!-- Sidebar is injected by script.js -->
+    <div id="sidebar-container"></div>
+
+    <div class="main-content flex-grow-1">
+      <!-- Header is injected by script.js -->
+      <header id="header-container" class="bg-white"></header>
+      
+      <main class="p-4">
+        <!-- Page Content -->
+        <div class="container-fluid">
+          <div class="row g-4 mb-4">
+            <div class="col-md-6 col-xl-3">
+              <div class="card border-0 shadow-sm dashboard-card h-100" style="--card-bg: var(--bs-cyan-100);">
+                <div class="card-body d-flex align-items-start">
+                  <div class="card-icon text-dark">📄</div>
+                  <div>
+                    <div class="card-title text-muted fw-medium">Initiation Details</div>
+                    <div class="card-value">4</div>
+                    <div class="card-details">INITIATION APPROVAL</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <div class="card border-0 shadow-sm dashboard-card h-100" style="--card-bg: var(--bs-sky-100);">
+                <div class="card-body d-flex align-items-start">
+                  <div class="card-icon text-dark">🔬</div>
+                  <div>
+                    <div class="card-title text-muted fw-medium">IPD Details</div>
+                    <div class="card-value">1</div>
+                    <div class="card-details">IN IPD</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             <div class="col-md-6 col-xl-3">
+              <div class="card border-0 shadow-sm dashboard-card h-100" style="--card-bg: var(--bs-red-100);">
+                <div class="card-body d-flex align-items-start">
+                  <div class="card-icon text-dark">📜</div>
+                  <div>
+                    <div class="card-title text-muted fw-medium">Licensed Details</div>
+                    <div class="card-value">50</div>
+                    <div class="card-details">IN LICENSED</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             <div class="col-md-6 col-xl-3">
+              <div class="card border-0 shadow-sm dashboard-card h-100" style="--card-bg: var(--bs-yellow-100);">
+                <div class="card-body d-flex align-items-start">
+                  <div class="card-icon text-dark">💊</div>
+                  <div>
+                    <div class="card-title text-muted fw-medium">Formulation Details</div>
+                    <div class="card-value">13</div>
+                    <div class="card-details">OWN DEVELOPMENT</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4 mb-4">
+            <div class="col-lg-8">
+              <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                  <h5 class="card-title fw-semibold mb-4">BU Projects</h5>
+                  <div style="height: 300px;">
+                    <canvas id="buProjectsChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="card shadow-sm border-0 h-100">
+                <div class="card-body text-center d-flex flex-column justify-content-center">
+                   <h5 class="card-title fw-semibold mb-3">Project Timeline</h5>
+                   <p class="text-muted mb-4">View and manage project schedules.</p>
+                   <a href="project-timeline.html" class="btn btn-primary">Go to Timeline</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title fw-semibold mb-4">Recent PIF</h5>
+              <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Initiating BU</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Total Cost</th>
+                      <th scope="col">Initiation Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-medium">Guanfacine tablets</td>
+                      <td>BU3 - UK</td>
+                      <td>In Licensing</td>
+                      <td>$ 20.00</td>
+                      <td>03-03-2025</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-medium">Haloperidol Tablets</td>
+                      <td>BU2 - S.Zhaveri</td>
+                      <td>In-House Development</td>
+                      <td>$ 5000.00</td>
+                      <td>12-02-2025</td>
+                    </tr>
+                     <tr>
+                      <td class="fw-medium">Fish Oil Omega</td>
+                      <td>BU4 Others</td>
+                      <td>In Licensing</td>
+                      <td>$ 20.00</td>
+                      <td>19-02-2025</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-medium">Zithromax</td>
+                      <td>BU3 - UK</td>
+                      <td>In Licensing</td>
+                      <td>$ 5000.00</td>
+                      <td>12-02-2025</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Page-specific script for dashboard chart
+    document.addEventListener('DOMContentLoaded', function() {
+      const ctx = document.getElementById('buProjectsChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['BU2 - S.Zhaveri', 'BU3 - UK', 'BU4 Others'],
+          datasets: [
+            {
+              label: 'Approved',
+              data: [4, 2, 5],
+              backgroundColor: 'rgba(22, 163, 74, 0.7)',
+              borderColor: 'rgba(22, 163, 74, 1)',
+              borderWidth: 1
+            },
+            {
+              label: 'Rejected',
+              data: [1, 0, 2],
+              backgroundColor: 'rgba(239, 68, 68, 0.7)',
+              borderColor: 'rgba(239, 68, 68, 1)',
+              borderWidth: 1
+            },
+            {
+              label: 'Ongoing',
+              data: [2, 1, 3],
+              backgroundColor: 'rgba(168, 85, 247, 0.7)',
+              borderColor: 'rgba(168, 85, 247, 1)',
+              borderWidth: 1
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+            },
+          },
+          scales: {
+            x: {
+              stacked: true,
+              grid: { display: false }
+            },
+            y: {
+              stacked: true,
+              beginAtZero: true
+            }
+          },
+          indexAxis: 'x',
+        }
+      });
+    });
+  </script>
+</body>
+</html>
