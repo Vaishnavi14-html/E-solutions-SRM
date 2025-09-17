@@ -1,5 +1,5 @@
 {
-  "name": "E-Solutions Project Management",
-  "description": "A comprehensive project management dashboard for tracking project lifecycles, from initiation to final approval, inspired by the Innovista platform. It includes features like a project timeline, detailed listings, financial roll-ups, and administrative controls.",
+  "name": "E-solutions - Project Management",
+  "description": "A comprehensive project management dashboard for tracking project lifecycles, from initiation to final approval, inspired by the Innovista platform. It features a dashboard, project listings, timelines, and administrative controls.",
   "requestFramePermissions": []
 }

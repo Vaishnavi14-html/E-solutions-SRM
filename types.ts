@@ -1,38 +1,84 @@
-// FIX: Add missing import for React to resolve namespace errors.
-import React from 'react';
+import type { LucideIcon } from 'lucide-react';
+
+export interface ProjectInitiation {
+  id: string;
+  name: string;
+  initiatingBU: string;
+  type: string;
+  status: string;
+}
+
+export interface InitiationApproval {
+  id: string;
+  name: string;
+  projectName: string;
+  initiatingBU: string;
+  type: string;
+  status: string;
+  ipEvaluation: string;
+  buName: string;
+  region: string;
+  country: string;
+  dosageForm: string;
+  packStyle: string;
+  strength: string;
+  sunit: string;
+  ipdRemarks: string;
+  regulatoryRemarks: string;
+}
+
+export interface CogsEstimation {
+  id: string;
+  projectName: string;
+  apiSource: string;
+  projectStatus: string;
+  apiPricePerKg: string;
+  freightPercent: string;
+  testingPercent: string;
+  saltAssayFactor: string;
+  dosageInfo: {
+    dosageForm: string;
+    packStyle: string;
+    strength: string;
+    strengthUnit: string;
+    ptd: string;
+    currency: string;
+    batchSize: string;
+    yieldPercent: string;
+    bopPacks: string;
+    comv10: string;
+  };
+}
+
+export interface FinalPLEvaluation {
+  id: string;
+  projectName: string;
+  initiationDate: string;
+  launchDate: string;
+  currency: string;
+  assumptions: {
+    discountRate: string;
+    taxRate: string;
+    opexPercent: string;
+    inventory: string;
+    receivables: string;
+    payables: string;
+  };
+  calculations: {
+    gestationYears: string;
+    gestationMonths: string;
+    simplePaybackYears: string;
+    simplePaybackMonths: string;
+    discountedPaybackYears: string;
+    discountedPaybackMonths: string;
+    npv: number;
+  };
+}
+// ... other types for ipd, initiationApproval, etc.
 
 export interface NavItem {
-  label: string;
-  path: string;
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  children?: NavItem[];
-}
-
-export interface Project {
-  id: string;
-  type: string;
-  bu: string;
-  source: string;
-  name: string;
-  dosageForm: string;
-  strength: string;
-  strengthUnit: string;
-  packStyle: string;
-  status: 'Approved' | 'Rejected' | 'Ongoing' | 'In IPD' | 'In PI' | 'COG Approved';
-  statusColor: 'green' | 'red' | 'yellow' | 'blue' | 'cyan' | 'orange';
-  initiationDate: string;
-}
-
-export interface TimelineTask {
-  id: string;
-  name: string;
-  start: string; // YYYY-MM-DD
-  end: string; // YYYY-MM-DD
-  color: string; // e.g., 'bg-blue-500'
-}
-
-export interface TimelineProject {
-  id: string;
-  name: string;
-  tasks: TimelineTask[];
+    path: string;
+    name: string;
+    icon: LucideIcon;
+    subItems?: NavItem[];
 }
